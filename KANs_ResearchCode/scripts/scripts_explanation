@@ -1,0 +1,60 @@
+Name: Anushka Pachaury
+UNI: ap4617
+
+---
+
+Details of Scripts: `KANModel.ipynb` and `TKAN.ipynb`
+
+1. KANModel.ipynb
+   - Purpose: 
+     This script implements and evaluates standard Kolmogorov-Arnold Networks (KANs) using various activation functions, such as Jacobi, Chebyshev, B-Spline, and Bessel. It focuses on analyzing the performance of these activations using S&P500 stock price data (`Adj Close` feature).
+   
+   - How to Run:
+     a. Ensure Python dependencies are installed in a virtual environment.
+     b. Open the notebook in Jupyter Notebook or an equivalent environment:
+        bash
+        jupyter notebook KANModel.ipynb
+        
+     c. Execute the cells sequentially to preprocess data, train models, and generate results.
+
+   - Arguments:
+     - `ticker` (string): The stock ticker symbol to fetch data using Yahoo Finance API. Example: `^GSPC` for S&P500.
+     - `start_date` (string): The starting date for fetching historical data. Format: `YYYY-MM-DD`.
+     - `end_date` (string): The ending date for fetching historical data. Format: `YYYY-MM-DD`.
+     - `activation_function` (string): Specifies the activation function to be used in KANs. Example values: "Jacobi", "Chebyshev", "B-Spline", "Bessel".
+
+   - Outputs:
+     - Preprocessed dataset saved as a CSV file.
+     - Performance metrics for each activation function, including MSE and RÂ².
+     - Activation-specific performance plots.
+
+---
+
+2. TKAN.ipynb
+   - Purpose:
+     This script focuses on implementing and evaluating Temporal Kolmogorov-Arnold Networks (TKAN) with Jacobi, Chebyshev, and B-Spline activation functions. It extends the KAN framework to temporal models by adding recurrent layers.
+
+   - How to Run
+     a. Ensure Python dependencies are installed in a virtual environment.
+     b. Open the notebook in Jupyter Notebook or an equivalent environment:
+        bash
+        jupyter notebook TKAN.ipynb
+        
+     c. Execute the cells sequentially to preprocess data, train temporal models, and generate results.
+
+   - Arguments:
+     - `ticker` (string): The stock ticker symbol to fetch data using Yahoo Finance API. Example: `^GSPC` for S&P500.
+     - `start_date` (string): The starting date for fetching historical data. Format: `YYYY-MM-DD`.
+     - `end_date` (string): The ending date for fetching historical data. Format: `YYYY-MM-DD`.
+     - `activation_function` (string): Specifies the temporal activation function for the TKAN model. Example values: "Jacobi", "Chebyshev", "B-Spline".
+
+   - Outputs:
+     - Preprocessed dataset saved as a CSV file.
+     - Metrics for loss and accuracy across temporal activation functions.
+     - Performance plots for Jacobi, Chebyshev, and B-Spline activations.
+
+---
+
+General Notes:
+- Both scripts rely on the `yfinance` library for fetching historical stock price data and preprocess the `Adj Close` column using normalization techniques like MinMaxScaler.
+- Virtual environment setup and dependency installation are essential to ensure smooth execution.
